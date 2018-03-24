@@ -30,7 +30,7 @@ const config: SocketIoConfig = { url: 'https://sc-chatserver.herokuapp.com', opt
       {path:'', component:ChatappComponent},
       {path:'chat', component: ChatappComponent},
       {path:'shurl', component: SignupFormComponent}
-    ])
+    ], {useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]
