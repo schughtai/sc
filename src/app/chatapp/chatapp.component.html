@@ -3,10 +3,10 @@
       <div class="row" *ngIf="username == null || username ==''">
           <div class="col-lg-8">
               <label>Username</label><br/>
-              <form action="">
+              <!--<form action="">-->
                 <input id="m"  class= "chatInput"  autocomplete="off" #username/>
                 <button (click)="setUsername(username.value)" class="btn btn-success">let's Chat</button>
-              </form>
+              <!--</form>-->
           </div>
       </div>
       <div class="chatbox" *ngIf="username != null && username !=''">
