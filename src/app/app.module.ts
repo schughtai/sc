@@ -27,7 +27,7 @@ const config: SocketIoConfig = { url: 'https://sc-chatserver.herokuapp.com', opt
     HttpModule,
     SocketIoModule.forRoot(config), 
     RouterModule.forRoot([
-      {path:'', component:ChatappComponent},
+      {path:'', component:HomeComponent},
       {path:'chat', component: ChatappComponent},
       {path:'shurl', component: SignupFormComponent}
     ], {useHash: true})
