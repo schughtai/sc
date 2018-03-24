@@ -1,0 +1,20 @@
+<form [formGroup]="form"  (ngSubmit) = "generateTinyUrl()">
+    <div class="form-group">
+        <label for="url">URL</label>
+        <input 
+            formControlName = "url" 
+            type="text" 
+            class="form-control">
+
+        <label for="customKey">Custom Key</label>
+        <input 
+            formControlName = "customKey" 
+            type="text" 
+            class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit">Generate</button>
+    <div class="form-group">
+        <label for="" class="error" *ngIf="responseGenerate.error == 1">{{responseGenerate.message}}</label>
+        <label for="" class="success" *ngIf="responseGenerate.error == 0">{{responseGenerate.body}}</label>
+    </div>
+</form>
