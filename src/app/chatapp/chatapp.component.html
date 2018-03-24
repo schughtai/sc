@@ -1,3 +1,45 @@
-<p>
-  chatapp works!
-</p>
+<section id="about">
+      <div class="container">
+      <div class="row" *ngIf="username == null || username ==''">
+          <div class="col-lg-8">
+              <label>Username</label><br/>
+              <form action="">
+                <input id="m"  class= "chatInput"  autocomplete="off" #username/>
+                <button (click)="setUsername(username.value)" class="btn btn-success">let's Chat</button>
+              </form>
+          </div>
+      </div>
+      <div class="chatbox" *ngIf="username != null && username !=''">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h2>Chat</h2>
+              <p>
+                Note: Kindly, don't use abusive language. It is public chat room.
+              </p>
+                  <ul id="messages"></ul>
+                  <form action="">
+                    <input id="m" class= "chatInput" autocomplete="off" #msgInput  />
+                    <button (click)="sendMsg(msgInput.value);msgInput.value='';"  class="btn btn-success js-send">Send</button>
+                  </form>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="messagelist list-group" *ngFor="let m of messages">
+              <div [ngClass]="m.username == 'You'?'message list-group-item':'message list-group-item'">
+                  <div class="media">
+                    <div class="media-body" [ngClass]="m.username == 'You'?'text-right':''">
+                      <img class="" src="http://via.placeholder.com/80x80" alt="Generic placeholder image" [ngClass]="m.username == 'You'?'ml-3 float-right':'mr-3'">
+                      <div style='display:inline-block; width:85%'>
+                        <h5 class="mt-0">{{m.username}}</h5>
+                        {{m.message}}
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
