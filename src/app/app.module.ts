@@ -1,4 +1,3 @@
-import { ChatFormComponent } from './chat-form/chat-form.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
