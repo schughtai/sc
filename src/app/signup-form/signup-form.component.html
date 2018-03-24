@@ -1,20 +1,30 @@
-<form [formGroup]="form"  (ngSubmit) = "generateTinyUrl()">
-    <div class="form-group">
-        <label for="url">URL</label>
-        <input 
-            formControlName = "url" 
-            type="text" 
-            class="form-control">
+<section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+             <h2>Generate Short URL</h2>
+                <form [formGroup]="form"  (ngSubmit) = "generateTinyUrl()">
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input 
+                            formControlName = "url" 
+                            type="text" 
+                            class="form-control">
 
-        <label for="customKey">Custom Key</label>
-        <input 
-            formControlName = "customKey" 
-            type="text" 
-            class="form-control">
+                        <label for="customKey">Custom Key</label>
+                        <input 
+                            formControlName = "customKey" 
+                            type="text" 
+                            class="form-control">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Generate</button>
+                    <hr class="defaultstyle"/>    
+                    <div class="form-group" *ngIf="responseGenerate !=null">
+                        <label for="" class="error" *ngIf="responseGenerate.error == 1">{{responseGenerate.message}}</label>
+                        <label for="" class="success" *ngIf="responseGenerate.error == 0">{{responseGenerate.body}}</label>
+                    </div>
+                </form>
+        </div>
     </div>
-    <button class="btn btn-primary" type="submit">Generate</button>
-    <div class="form-group">
-        <label for="" class="error" *ngIf="responseGenerate.error == 1">{{responseGenerate.message}}</label>
-        <label for="" class="success" *ngIf="responseGenerate.error == 0">{{responseGenerate.body}}</label>
     </div>
-</form>
+</section>
